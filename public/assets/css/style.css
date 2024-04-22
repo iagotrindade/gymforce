@@ -1,0 +1,939 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+:root {
+    --primary-color: #8176FD;
+    --emphasis-color: #8931DA;
+    --default-dark-color: #181819;
+    --light-black-color: #3E3D3D;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.w-95 {
+    width: 95%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.m-10 {
+    margin: 10px !important;
+}
+
+.m-20 {
+    margin: 20px !important;
+}
+
+.m-30 {
+    margin: 30px !important;
+}
+
+.m-40 {
+    margin: 40px !important;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-40 {
+    margin-bottom: 40px !important;
+}
+
+.mb-80 {
+    margin-bottom: 80px !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.default-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.default-flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.default-flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.default-flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.default-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.default-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.default-flex-column-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.default-flex-column-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.default-flex-column-around {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.default-flex-column-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do indicador de rolagem */
+}
+
+.app-container {
+    max-width: 430px;
+    height: 100vh;
+    margin: auto;
+}
+
+.initial-loading-screen {
+    width: 430px;
+    height: 100vh;
+    background-color: var(--emphasis-color);
+}
+
+.login-choice-area {
+    width: inherit;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(19, 0, 35, 0) 15.5%, #1E0731 93%);
+    mix-blend-mode: hard-light;
+    background-repeat: no-repeat;
+    background-blend-mode: hard-light;
+}
+
+.login-choice-info-area {
+    padding: 14px;
+    margin-bottom: 28px;
+}
+
+.login-choice-info-area h1 {
+    font-weight: 800;
+    font-size: 33px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.login-choice-info-area p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    color: #D9D9D9;
+}
+
+.login-choice-buttons {
+    margin-bottom: 80px;
+}
+
+.change-login-tab-button {
+    width: 191px;
+    height: 38px;
+    color: var(--emphasis-color);
+    background-color: transparent;
+    border: 1px solid var(--emphasis-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.change-login-tab-button:hover {
+    color: #FFFFFF;
+    background-color: var(--emphasis-color);
+}
+
+.login-active {
+    color: #FFFFFF;
+    background-color: var(--emphasis-color);
+}
+
+.student-login-tab-area, .teacher-login-tab-area, .confirm-login-tab-area, .forgot-password-tab-area, .change-password-tab-area {
+    max-width: 430px;
+    height: 100vh;
+    padding: 30px;
+    background-color: var(--default-dark-color);
+}
+
+.login-back-button {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-bottom: 88px;
+}
+
+.login-back-button a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.login-back-button i {
+    font-size: 22px;
+}
+
+.login-form-texts-area {
+    margin-bottom: 65px;
+}
+
+.login-form-texts-area h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.login-form-texts-area p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #D9D9D9;
+}
+
+.login-form-title h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.login-input-box {
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.login-input-box label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+}
+
+.login-input-box input {
+    height: 45px;
+    border: 1px solid #525050;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding-left: 10px;
+    outline: 0;
+}
+
+.remember-input-area {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.remember-input-area input {
+    margin-right: 8px;
+}
+
+.forgot-password-link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: var(--emphasis-color);
+    cursor: pointer;
+}
+
+.login-button-area {
+    margin-bottom: 50px;
+}
+
+.login-button-area button {
+    height: 38px;
+    border: none;
+    background-color: var(--emphasis-color);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.login-or-area {
+    opacity: 0.5;
+    margin-bottom: 40px;
+}
+
+.or-left-line, .or-right-line {
+    height: 1px;
+    background-color: #D9D9D9;
+}
+
+.or-text {
+    margin: 0 6px;
+    color: #D9D9D9;
+}
+
+.dont-have-account-button-area {
+    margin-bottom: 160px;
+}
+
+.dont-have-account-button-area button {
+    height: 38px;
+    background-color: transparent;
+    border: 1px solid var(--emphasis-color);
+    border-radius: 40px;
+    color: var(--emphasis-color);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.questions-link-area p {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+
+.questions-link-area a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--emphasis-color);
+    margin-right: 5px;
+}
+
+.confirm-login-input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-login-input-box {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 7px;
+    outline: 0;
+    color: #FFFFFF;
+}
+
+.confirm-login-form-title p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #D9D9D9;
+    text-align: left;
+
+}
+
+.re-send-verification-code {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: var(--emphasis-color);
+}
+
+/*Studant APP CSS*/
+
+.student-area {
+    max-width: 430px;
+    height: 100vh;
+    padding: 20px;
+    background-color: var(--default-dark-color);
+    overflow-y: scroll;
+    padding-bottom: 100px;
+}
+
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+    border-top: 1px solid #2B2B2B;
+    background-color: var(--default-dark-color);
+}
+
+.mobile-menu nav {
+    height: 100%;
+}
+
+.mobile-menu-icons-area {
+    height: 100%;
+    list-style: none;
+}
+
+.mobile-menu-icons-area li, .mobile-menu-icons-area li a {
+    text-decoration: none;
+    color: #5B5B5B;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-menu-icons-area li:hover {
+    color: #FFFFFF;
+}
+
+.active-menu {
+    color: #FFFFFF;
+}
+
+.home-student-header {
+    align-items: flex-start;
+}
+
+.home-student-header h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+
+}
+
+.welcome-minor-text {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #D9D9D9;
+}
+
+.home-student-header-date-area {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.home-student-header h4 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.home-workouts-list a {
+    text-decoration: none
+}
+
+.workout-item {
+    background-size: cover;
+    width: 370px;
+    height: 170px;
+    border-radius: 5px;
+    padding: 15px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.workout-item h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.workout-item p {
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/*STUDENT WORKOUT CSS*/
+
+.workout-student-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 430px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.workout-student-back-button {
+    margin-bottom: 90px;
+    padding: 25px 0 0 25px;
+}
+
+.workout-student-back-button i {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+
+.workout-student-info {
+    align-items: flex-end;
+    padding: 0 25px 25px 25px;
+}
+
+.workout-student-info h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.workout-student-info p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.finish-workout-button {
+    width: 100px;
+    height: 25px;
+    background-color: #3C3B3B;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 55px;
+    cursor: pointer;
+}
+
+.completion-percentage-bar {
+    height: 5px;
+    background-color: #3C3B3B;
+}
+
+.percentage-completed {
+    height: 5px;
+    background-color: var(--emphasis-color);
+}
+
+.student-workout-list {
+    margin-top: 220px;
+}
+
+.student-workout-item {
+    height: 100px;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    padding-right: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.student-workout-item-texts {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.student-workout-item i {
+    font-size: 26px;
+}
+
+.studant-exercise-info {
+    align-items: flex-start;
+    overflow-y: scroll;
+}
+
+.exercise-info-name {
+    align-items: flex-start;
+}
+
+.exercise-info-name h3 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 17px;
+}
+
+.exercise-info-name p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #D9D9D9;
+}
+
+.minor-exercise-info-box,  .major-exercise-info-box {
+    width: 48%;
+    height: 100px;
+    background: #1E1E1E;
+    border-radius: 6px;
+    color: #FFFFFF;
+}
+
+.finish-exercise-button-area button {
+    height: 38px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: var(--emphasis-color);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*Timer CSS*/
+
+.timer-modal-area {
+    width: 100vw;
+    height: 304PX;
+    background-color: var(--default-dark-color);
+    border-radius: 5px;
+    position: fixed;
+    top: 30%;
+    left: 0;
+}
+
+.timer-content-area {
+    background-color: var(--default-dark-color);
+    padding: 15px;
+}
+
+.close-timer-button-area i {
+    color: #FFFFFF;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.timer-count {
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 43px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-count .small {
+    font-size: 20px;
+}
+
+.timer-control-button {
+    width: 80px;
+    height: 27px;
+    border: 1px solid #454444;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #454444;
+    cursor: pointer;
+    border: none;
+}
+
+.timer-control-active {
+    background-color: var(--emphasis-color);
+    color: #FFFFFF;
+}
+
+.start-timer-button {
+    margin: 0 10px 0 10px;
+}
+
+/*PROFILE CSS*/
+
+.student-profile-image-area {
+    margin-right: 30px;
+}
+
+.student-profile-image-area img {
+    width: 105px;
+    height: 105px;
+    border-radius: 90px;
+    border: 3px solid var(--emphasis-color);
+}
+
+.student-profile-personal-info-area {
+    align-items: flex-start;
+}
+
+.student-profile-plan-info {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #5B5B5B;
+}
+
+.student-profile-name {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+.student-profile-age {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #5B5B5B;
+}
+
+.student-profile-id {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.edit-profile-button-area {
+    height: 109px;
+    font-size: 26px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.student-profile-statistics h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.statistic-box {
+    width: 124px;
+    height: 85px;
+    background-color: #1E1E1E;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.large-statistic-box {
+    height: 104px;
+    background: #1E1E1E;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.measures-table {
+    border-spacing: 10px
+}
+
+.measures-table tbody {
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #5B5B5B;
+}
+
+.change-profile-tab-button {
+    width: 142px;
+    height: 30px;
+    top: 436px;
+    background-color: #1E1E1E;
+    border-radius: 15px;
+    border: none;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5B5B5B;
+    cursor: pointer;
+}
+
+.change-profile-tab-button-active {
+    background-color: var(--emphasis-color);
+    color: #FFFFFF;
+}
+
+.weight-history-line-area {
+    width: 95vw;
+    overflow-x: scroll;
+}
+
+.weight-progess-area h3 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.weight-progess-area p {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+    margin: 0 40px ;
+}
+
+.history-line-weight-info {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.primary-line {
+    width: 120px;
+    height: 2px;
+    background-color: var(--emphasis-color);
+}
+
+.line-point {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: var(--emphasis-color);
+    margin-top: -6px;
+}
+
+.history-line-date-info {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+

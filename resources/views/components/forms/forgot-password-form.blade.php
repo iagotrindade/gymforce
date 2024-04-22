@@ -1,0 +1,15 @@
+<form action="" class="teacher-login-form w-100">
+    <div class="login-input-box default-flex-column mb-20">
+        <label for="registration">E-mail</label>
+        <input class="w-100" type="text" name="registration" placeholder="seu-email@gmail.com">
+    </div>   
+
+    <div class="login-button-area">
+        <button class="w-100" type="submit">Enviar</button>
+    </div>
+</form>
+
+<div class="questions-link-area default-flex" style="margin-top: 200px">
+    <p>Dúvidas ou Problemas?</p>
+    <a href="">Falar no WhastApp</a>
+</div>

@@ -2,6 +2,6 @@
     <livewire:student-profile />
 
     <livewire:timer-modal />
-    <livewire:mobile-menu activeMenu="workouts"/>
+    <livewire:mobile-menu activeMenu="profile"/>
 </x-layouts.student-layout>
 

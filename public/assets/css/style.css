@@ -32,6 +32,10 @@
     width: 85%;
 }
 
+.w-70 {
+    width: 70%;
+}
+
 .w-75 {
     width: 75%;
 }
@@ -50,6 +54,10 @@
 
 .w-40 {
     width: 40%;
+}
+
+.w-30 {
+    width: 30%;
 }
 
 .w-25 {
@@ -836,6 +844,9 @@
     height: 85px;
     background-color: #1E1E1E;
     border-radius: 6px;
+}
+
+.statistic-box p {
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
@@ -891,10 +902,11 @@
 
 .weight-progess-area h3 {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 26px;
     line-height: 34px;
     text-align: center;
     color: #FFFFFF;
+    
 }
 
 .weight-progess-area p {
@@ -935,5 +947,118 @@
     color: #FFFFFF;
 }
 
+.student-imc-area h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
 
+.imc-table {
+    border-spacing: 0;
+}
 
+.imc-table thead tr th{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.imc-table tbody tr td{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 25px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #5B5B5B;
+}
+
+.progress-tab-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.progress-tab-month {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.training-history-line-area-item .primary-line {
+    width: 95px;
+}
+
+.training-timeline-item-title {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.edit-profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--default-dark-color);
+    padding: 40px 25px;
+}
+
+.close-edit-profile-modal-area {
+    color: #FFFFFF;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.edit-profile-image img {
+    width: 98px;
+    height: 98px;
+    border-radius: 98px;
+    border: 3px solid var(--emphasis-color)
+}
+
+.edit-profile-image p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration-line: underline;
+    color: #7930B6;
+    cursor: pointer;
+}
+
+.edit-profile-input-box {
+    align-items: flex-start;
+}
+
+.edit-profile-input-box label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    padding-bottom: 6px;
+}
+
+.edit-profile-input-box input {
+    height: 45px;
+    border: 1px solid #525050;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #FFFFFF;
+    padding-left: 10px;
+    outline: 0;
+}
+
+.submit-edit-profile-button {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #7930B6;
+    background-color: transparent;
+    border: none;
+}

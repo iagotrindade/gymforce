@@ -12,9 +12,17 @@
             </li>
 
             <li>
-                <i class='bx bx-dumbbell @if($activeMenu == 'workouts') active-menu @endif'></i>
+                <i class='bx bx-search-alt-2 @if($activeMenu == 'search') active-menu @endif' wire:click="$dispatch('openSearch')"></i>
+            </li>
+
             <li>
-                <i class='bx bx-user @if($activeMenu == 'profile') active-menu @endif'></i>
+                <a href="{{route('home')}}">
+                    <i class='bx bx-dumbbell @if($activeMenu == 'workouts') active-menu @endif'></i>
+                </a>
+            <li>
+                <a href="{{route('profile')}}">
+                    <i class='bx bx-user @if($activeMenu == 'profile') active-menu @endif'></i>
+                </a>
             </li>
         </ul>
     </nav>

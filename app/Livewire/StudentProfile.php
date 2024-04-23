@@ -7,6 +7,7 @@ use Livewire\Component;
 class StudentProfile extends Component
 {
     public $activeTab = 'weight';
+    public $modalDisplay = 'none';
 
     public function render()
     {
@@ -15,5 +16,9 @@ class StudentProfile extends Component
 
     public function changeProfileTab($tab) {
         $this->activeTab = $tab;
+    }
+
+    public function openEditProfileModal() {
+        $this->modalDisplay = ($this->modalDisplay === 'none') ? 'flex' : 'none';
     }
 }

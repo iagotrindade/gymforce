@@ -528,7 +528,6 @@
     font-size: 24px;
     line-height: 29px;
     color: #FFFFFF;
-
 }
 
 .welcome-minor-text {
@@ -906,7 +905,7 @@
     line-height: 34px;
     text-align: center;
     color: #FFFFFF;
-    
+
 }
 
 .weight-progess-area p {
@@ -1061,4 +1060,95 @@
     color: #7930B6;
     background-color: transparent;
     border: none;
+}
+
+/*ADM HOME CSS*/
+
+.home-teacher-header {
+    align-items: flex-start;
+}
+
+.home-teacher-header h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.home-teacher-header-date-area {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.students-top-area h3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.students-top-area select {
+    background-color: transparent;
+    border: none;
+    appearance: none;
+    outline: 0;
+    border-bottom: 1px solid #4B4949;
+    color: #4B4949;
+}
+
+.student-list-item {
+    padding: 20px 16px;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.student-list-item-left img {
+    width: 57px;
+    height: 57px;
+    border-radius: 57px;
+    margin-right: 13px;
+}
+
+.student-list-item-left p {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.student-list-item-right p {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.student-list-item-right i {
+    color: #525050;
+}
+
+.student-active {
+    color: var(--primary-color) !important;
+}
+
+.add-new-student-button-area {
+    position: fixed;
+    bottom: 100px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--emphasis-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 50px;
+    cursor: pointer;
 }

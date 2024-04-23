@@ -19,7 +19,7 @@
             </div>
 
             <div class="edit-profile-button-area">
-                <i class='bx bxs-pencil'></i>
+                <i class='bx bxs-pencil' wire:click="openEditProfileModal()"></i>
             </div>
         </div>
 
@@ -210,7 +210,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 1</p>
                         </div>
 
@@ -219,7 +219,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 2</p>
                         </div>
 
@@ -228,7 +228,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 3</p>
                         </div>
 
@@ -237,7 +237,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 4</p>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 1</p>
                         </div>
 
@@ -261,7 +261,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 2</p>
                         </div>
 
@@ -270,7 +270,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 3</p>
                         </div>
 
@@ -279,7 +279,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 4</p>
                         </div>
                     </div>
@@ -294,7 +294,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 1</p>
                         </div>
 
@@ -303,7 +303,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 2</p>
                         </div>
 
@@ -312,7 +312,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 3</p>
                         </div>
 
@@ -321,7 +321,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 4</p>
                         </div>
                     </div>
@@ -336,7 +336,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 1</p>
                         </div>
 
@@ -345,7 +345,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 2</p>
                         </div>
 
@@ -354,7 +354,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 3</p>
                         </div>
 
@@ -363,7 +363,7 @@
                                 <div class="primary-line"></div>
                                 <div class="line-point"></div>
                             </div>
-        
+
                             <p class="history-line-date-info">Semana 4</p>
                         </div>
                     </div>
@@ -371,12 +371,12 @@
             </div>
         </div>
 
-        <div class="edit-profile-modal">
+        <div class="edit-profile-modal" style="display: {{$modalDisplay}};">
             <div class="close-edit-profile-modal-area">
                 <div class="default-flex-end w-100">
-                    <i class='bx bx-x'></i>
+                    <i class='bx bx-x'  wire:click="openEditProfileModal()"></i>
                 </div>
-                
+
 
                 <div class="edit-profile-image default-flex-column mb-30">
                     <img class="mb-10" src="{{url('assets/images/avatars/avatar.png')}}" alt="Imagem do Usuário">
@@ -389,6 +389,5 @@
                 </div>
             </div>
         </div>
-
     </section>
 </div>

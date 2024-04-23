@@ -23,6 +23,10 @@ Route::middleware(['guest'])->group(function () {
         Route::get('/', 'index')->name('home');
     });
 
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/adm', 'adm')->name('adm');
+    });
+
     Route::controller(WorkoutController::class)->group(function () {
         Route::get('/treino', 'index')->name('workout');
     });

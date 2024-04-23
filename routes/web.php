@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
 
 Route::middleware(['auth'])->group(function () {
     Route::controller(HomeController::class)->group(function () {
@@ -21,9 +22,6 @@ Route::middleware(['guest'])->group(function () {
 
     Route::controller(HomeController::class)->group(function () {
         Route::get('/', 'index')->name('home');
-    });
-
-    Route::controller(HomeController::class)->group(function () {
         Route::get('/adm', 'adm')->name('adm');
     });
 
@@ -33,5 +31,9 @@ Route::middleware(['guest'])->group(function () {
 
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/perfil', 'index')->name('profile');
+    });
+
+    Route::controller(StudentController::class)->group(function () {
+        Route::get('/aluno', 'index')->name('student');
     });
 });

@@ -14,6 +14,6 @@
     <main>
         <livewire:students-area />
     </main>
-
+    
     <livewire:mobile-menu activeMenu="home"/>
 </x-layouts.student-layout>

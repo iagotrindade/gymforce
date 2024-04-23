@@ -36,11 +36,11 @@
        </a>
 
        <a href="{{route('workout')}}">
-        <div class="workout-item default-flex-column-end" style="background-image: url({{url('assets/images/workouts/chest-workout.png')}})">
-            <h3 class="mb-10">Treino C</h3>
-            <p>90 min | Ter/Qui/Sab</p>
-        </div>
-   </a>
+            <div class="workout-item default-flex-column-end" style="background-image: url({{url('assets/images/workouts/chest-workout.png')}})">
+                <h3 class="mb-10">Treino C</h3>
+                <p>90 min | Ter/Qui/Sab</p>
+            </div>
+        </a>
     </section>
 
     <livewire:timer-modal />

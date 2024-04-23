@@ -44,7 +44,6 @@
                     </div>
                 </div>
 
-
                 <div class="large-statistic-box measures-box w-100 default-flex-column">
                     <p class="mb-10">Medidas (Cm)</p>
 

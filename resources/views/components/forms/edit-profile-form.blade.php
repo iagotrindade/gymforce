@@ -11,6 +11,8 @@
             <input class="w-100" type="text" name="age">
          </div>
       </div>
+
+      {{$adminFoneEdit}}
       
       <div class="default-flex-between mb-10">
          <div class="edit-profile-input-box default-flex-column w-20">
@@ -46,8 +48,10 @@
          <input class="w-100" type="text" name="weight">
      </div>
 
+     {{$adminEditPlan}}
+
      <div class="default-flex-end">
-         <button class="submit-edit-profile-button ">Salvar</button>
+         <button class="submit-edit-profile-button">Salvar</button>
      </div>
   </form>
 </div>

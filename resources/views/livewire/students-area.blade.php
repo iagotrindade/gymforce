@@ -440,7 +440,35 @@
                     </div>
     
                     <div class="edit-profile-form-area">
-                        <x-forms.edit-profile-form></x-forms.edit-profile-form>
+                        <x-forms.edit-profile-form>
+                            <x-slot:adminFoneEdit>
+                                <div class="default-flex-between mb-10">
+                                    <div class="edit-profile-input-box default-flex-column w-45">
+                                       <label for="whatsapp">Whatsapp</label>
+                                       <input class="w-100" type="text" name="whatsapp">
+                                   </div>
+                             
+                                   <div class="edit-profile-input-box default-flex-column w-50">
+                                       <label for="phone">Número</label>
+                                       <input class="w-100" type="text" name="phone">
+                                    </div>
+                                </div>
+                            </x-slot:adminFoneEdit>
+                                
+                            <x-slot:adminEditPlan>
+                                <div class="default-flex-between mb-20">
+                                    <div class="edit-profile-input-box default-flex-column w-70">
+                                       <label for="plan">Plano</label>
+                                       <input class="w-100" type="text" name="plan">
+                                   </div>
+                             
+                                   <div class="edit-profile-input-box default-flex-column w-25">
+                                       <label for="plan_date">Data</label>
+                                       <input class="w-100" type="text" name="plan_date">
+                                    </div>
+                                </div>
+                            </x-slot:adminEditPlan>
+                        </x-forms.edit-profile-form>
                     </div>
                 </div>
             </div>

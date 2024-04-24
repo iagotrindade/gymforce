@@ -27,6 +27,7 @@ Route::middleware(['guest'])->group(function () {
 
     Route::controller(WorkoutController::class)->group(function () {
         Route::get('/treino', 'index')->name('workout');
+        Route::get('/adm/exercicios', 'adm')->name('workout.adm');
     });
 
     Route::controller(ProfileController::class)->group(function () {

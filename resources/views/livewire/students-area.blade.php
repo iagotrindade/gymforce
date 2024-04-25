@@ -48,14 +48,14 @@
             </div>
         </div>
     
-        <section class="change-manage-student-tab-area">
+        <div class="change-manage-student-tab-area">
             <div class="change-manage-tab-buttons-area default-flex-between mb-20">
                 <p class="change-manage-tab-button default-flex w-100 {{ $activeManageTab === 'profile' ? 'change-manage-tab-button-active' : '' }}" wire:click="changeManageTab('profile')">Perfil</p>
                 <p class="change-manage-tab-button default-flex w-100 {{ $activeManageTab === 'workout' ? 'change-manage-tab-button-active' : '' }}" wire:click="changeManageTab('workout')">Treino</p>
             </div>
-        </section>
+        </div>
     
-        <section class="student-profile-area" style="display: {{ $activeManageTab === 'profile' ? 'block' : 'none' }}; margin-bottom: 80px;">
+        <div class="student-profile-area" style="display: {{ $activeManageTab === 'profile' ? 'block' : 'none' }}; margin-bottom: 80px;">
             <div class="student-profile-head mb-30 default-flex-between">
                 <div class="default-flex">
                     <div class="student-profile-image-area">
@@ -472,9 +472,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     
-        <section class="manage-student-workout" style="display: {{ $activeManageTab === 'workout' ? 'block' : 'none' }}; margin-bottom: 80px;">
+        <div class="manage-student-workout" style="display: {{ $activeManageTab === 'workout' ? 'block' : 'none' }}; margin-bottom: 80px;">
             <h3 class="manage-workout-title mb-30">Treinos Cadastrados</h3>
     
             <section class="home-workouts-list default-flex-column">
@@ -504,6 +504,66 @@
                     <p>90 min | Ter/Qui/Sab</p>
                 </div>
             </section>
-        </section>
+        </div>
+
+        <div class="edit-workout-area default-flex-column" style="display: {{$editWorkoutModalDisplay}};">
+            <div class="workout-student-header  mb-20" style="background-image: url({{url('assets/images/workouts/back-workout.png')}}); height:240px;">
+                <div class="workout-student-back-button mb-40">
+                    <div class="default-flex-start">
+                        <i class='bx bxs-chevron-left'></i>
+                        <p>Voltar</p>
+                    </div>
+                </div>
+
+                <div class="change-cover-image-button default-flex-column">
+                    <i class='bx bxs-image-add'></i>
+                    <p>Trocar capa</p>
+                </div>
+            </div>
+
+            <div class="edit-workout-info mb-10">
+                <form action="">
+                    <div class="default-flex-between mb-10">
+                        <div class="edit-profile-input-box default-flex-column w-70">
+                           <label for="name">Nome</label>
+                           <input class="w-100" type="text" name="name">
+                       </div>
+                 
+                       <div class="edit-profile-input-box default-flex-column w-25">
+                           <label for="duration">Tempo</label>
+                           <input class="w-100" type="text" name="duration">
+                        </div>
+                    
+                        <select name="" id="">
+                            <option value="all">Seg/Qua/Sex</option>
+                            <option value="recent">Seg/Qua/Sex<</option>
+                            <option value="active">Seg/Qua/Sex<</option>
+                            <option value="inactive">Seg/Qua/Sex<</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="workout-exercises-list w-100">
+                <div class="exercise-list-item mb-20 default-flex-between w-100">
+                    <img src="{{url('assets/images/exercises/exercise.png')}}" alt="Imagem do Exercício">
+                    <div class="exercise-list-item-info default-flex-column">
+                        <h4 class="mb-20">Agachamento com Peso</h4>
+        
+                        <p>01:00</p>
+                    </div>
+        
+                    <i class='bx bxs-trash-alt'></i>
+                </div>
+            </div>
+
+            <div class="add-new-exercise-button default-flex w-100 mb-20">
+                <p>+ Adicionar Exercício</p>
+            </div>
+
+            <div class="save-workout-button default-flex-end w-100">
+                <button>Salvar</button>
+            </div>
+        </div>
     </section>    
 </div>

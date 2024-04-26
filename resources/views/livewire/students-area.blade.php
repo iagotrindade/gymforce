@@ -524,7 +524,7 @@
             <div class="edit-workout-info mb-10">
                 <form action="">
                     <div class="default-flex-between mb-10">
-                        <div class="edit-profile-input-box default-flex-column w-70">
+                        <div class="edit-profile-input-box default-flex-column w-65">
                            <label for="name">Nome</label>
                            <input class="w-100" type="text" name="name">
                        </div>
@@ -534,12 +534,17 @@
                            <input class="w-100" type="text" name="duration">
                         </div>
                     
-                        <select name="" id="">
-                            <option value="all">Seg/Qua/Sex</option>
-                            <option value="recent">Seg/Qua/Sex<</option>
-                            <option value="active">Seg/Qua/Sex<</option>
-                            <option value="inactive">Seg/Qua/Sex<</option>
-                        </select>
+
+                        <div class="edit-profile-input-box default-flex-column w-25">
+                            <label class="mb-20" for="days">Dias</label>
+                            <select name="days" id="">
+                                <option value="all">Seg/Qua/Sex</option>
+                                <option value="recent">Seg/Qua/Sex<</option>
+                                <option value="active">Seg/Qua/Sex<</option>
+                                <option value="inactive">Seg/Qua/Sex<</option>
+                            </select>
+                        </div>
+                            
                     </div>
                 </form>
             </div>
@@ -557,12 +562,57 @@
                 </div>
             </div>
 
-            <div class="add-new-exercise-button default-flex w-100 mb-20">
+            <div class="add-new-exercise-button default-flex w-100 mb-20" wire:click="addExercise()">
                 <p>+ Adicionar Exercício</p>
             </div>
 
             <div class="save-workout-button default-flex-end w-100">
                 <button>Salvar</button>
+            </div>
+        </div>
+
+        <div class="add-new-exercise-area default-flex-column" style="display: {{$addExerciseDisplay}}">
+            <div class="workout-student-back-button mb-40 w-100">
+                <div class="default-flex-start">
+                    <i class='bx bxs-chevron-left'></i>
+                    <p>Voltar</p>
+                </div>
+            </div>
+
+            <div class="search-workout-exercise-area default-flex w-100 mb-30">
+                <input class="w-100" type="text" name="search" id="">
+                <i class='bx bx-search-alt-2'></i>
+            </div>
+
+            <div class="students-top-area default-flex-between mb-20 w-100">
+                <h3>Exercícios</h3>
+        
+                <select name="" id="">
+                    <option value="all">Todos</option>
+                    <option value="recent">Recentes</option>
+                    <option value="active">Ativos</option>
+                    <option value="inactive">Inativos</option>
+                </select>
+            </div>
+        
+            <div class="exercises-list-area default-flex-column w-100">
+                <div class="exercise-list-item mb-20 default-flex-between w-100" wire:click="addExerciseAction()">
+                    <img src="{{url('assets/images/exercises/exercise.png')}}" alt="Imagem do Exercício">
+                    <div class="exercise-list-item-info default-flex-column">
+                        <h4 class="mb-20">Agachamento com Peso</h4>
+        
+                        <p>01:00</p>
+                    </div>
+                </div>
+
+                <div class="exercise-list-item mb-20 default-flex-between w-100" wire:click="addExerciseAction()">
+                    <img src="{{url('assets/images/exercises/exercise.png')}}" alt="Imagem do Exercício">
+                    <div class="exercise-list-item-info default-flex-column">
+                        <h4 class="mb-20">Agachamento com Peso</h4>
+        
+                        <p>01:00</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>    

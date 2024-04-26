@@ -11,6 +11,7 @@ class StudentsArea extends Component
     public $activeTab = 'weight';
     public $editStudentModalDisplay = 'none';
     public $editWorkoutModalDisplay = 'none';
+    public $addExerciseDisplay = 'none';
 
     public function render()
     {
@@ -35,5 +36,13 @@ class StudentsArea extends Component
 
     public function openEditWorkoutModal() {
         $this->editWorkoutModalDisplay = ($this->editWorkoutModalDisplay === 'none') ? 'flex' : 'none';
+    }
+
+    public function addExercise() {
+        $this->addExerciseDisplay = ($this->addExerciseDisplay === 'none') ? 'flex' : 'none';
+    }
+
+    public function addExerciseAction() {
+        
     }
 }

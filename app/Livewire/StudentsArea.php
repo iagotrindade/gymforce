@@ -7,14 +7,21 @@ use Livewire\Component;
 class StudentsArea extends Component
 {
     public $manageDisplay = 'none';
+    public $addStudentFormDisplay = 'none';
     public $activeManageTab = 'profile';
     public $activeTab = 'weight';
     public $editStudentModalDisplay = 'none';
     public $editWorkoutModalDisplay = 'none';
+    public $addExerciseDisplay = 'none';
+    public $addExerciseInfoDisplay = 'none';
 
     public function render()
     {
         return view('livewire.students-area');
+    }
+
+    public function addStudent() {
+        $this->addStudentFormDisplay = ($this->addStudentFormDisplay === 'none') ? 'flex' : 'none';
     }
 
     public function manageStudent() {
@@ -35,5 +42,21 @@ class StudentsArea extends Component
 
     public function openEditWorkoutModal() {
         $this->editWorkoutModalDisplay = ($this->editWorkoutModalDisplay === 'none') ? 'flex' : 'none';
+    }
+
+    public function addExerciseModal() {
+        $this->addExerciseDisplay = ($this->addExerciseDisplay === 'none') ? 'flex' : 'none';
+    }
+
+    public function addExerciseAction() {
+        $this->addExerciseInfoDisplay = ($this->addExerciseInfoDisplay === 'none') ? 'flex' : 'none';
+    }
+
+    public function searchExercise() {
+        
+    }
+
+    public function filterStudents() {
+
     }
 }

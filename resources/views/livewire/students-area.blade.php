@@ -432,9 +432,8 @@
                         <i class='bx bx-x'  wire:click="openEditProfileModal()"></i>
                     </div>
     
-    
                     <div class="edit-profile-image default-flex-column mb-30">
-                        <img class="mb-10" src="{{url('assets/images/avatars/avatar.png')}}" alt="Imagem do Usuário">
+                        <img class="mb-10" src="{{url('assets/images/avatars/avatar.png')}}" alt="Imagem do usuário">
     
                         <p>Carregar Foto</p>
                     </div>
@@ -671,7 +670,7 @@
     <section class="add-new-studant-area default-flex-column" style="display: {{$addStudentFormDisplay}}">
         <div class="add-new-student-form-area">
             <div class="edit-profile-modal">
-                <div class="workout-student-back-button mb-40 w-100" style="padding: 0;">
+                <div class="workout-student-back-button mb-20 w-100" style="padding: 0;">
                     <div class="default-flex-start" wire:click="addStudent()">
                         <i class='bx bxs-chevron-left'></i>
                         <p>Voltar</p>

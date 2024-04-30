@@ -70,7 +70,7 @@
             </div>
     </div>
  
-      <div class="default-flex-end">
+      <div class="default-flex-end mb-80">
           <button class="submit-edit-profile-button">Salvar</button>
       </div>
    </form>

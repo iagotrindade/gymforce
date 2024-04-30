@@ -509,6 +509,7 @@
 .mobile-menu-icons-area {
     height: 100%;
     list-style: none;
+    background-color: var(--default-dark-color);
 }
 
 .mobile-menu-icons-area li, .mobile-menu-icons-area li a {
@@ -612,13 +613,13 @@
 .workout-student-back-button {
     margin-bottom: 90px;
     padding: 25px 0 0 0;
+    cursor: pointer;
 }
 
 .workout-student-back-button i {
     color: #FFFFFF;
     font-size: 28px;
-    font-weight: 400;
-    cursor: pointer;
+    font-weight: 400;   
 }
 
 .workout-student-back-button p {
@@ -1020,13 +1021,14 @@
 }
 
 .edit-profile-modal {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: var(--default-dark-color);
     padding: 40px 25px;
+    overflow-y: scroll;
 }
 
 .close-edit-profile-modal-area {
@@ -1360,4 +1362,33 @@
     color: #FFFFFF;
     border: 0;
     cursor: pointer;
+}
+
+.add-exercise-modal {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--default-dark-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    justify-content: flex-start;
+    padding: 25px;
+}
+
+.add-exercise-form-img {
+    height: 350px;
+    border: 1px dashed #525050;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-exercise-form-img i {
+    color: var(--emphasis-color);
+    font-size: 38px;
+}
+
+.add-exercise-form-img p {
+    color: #FFFFFF;
+    font-size: 12px;
 }

@@ -384,7 +384,11 @@
                 </div>
 
                 <div class="edit-profile-form-area">
-                    <x-forms.edit-profile-form></x-forms.edit-profile-form>
+                    <x-forms.edit-profile-form>
+                        <x-slot:adminFoneEdit></x-slot:adminFoneEdit>
+
+                        <x-slot:adminEditPlan></x-slot:adminEditPlan>
+                    </x-forms.edit-profile-form>
                 </div>
             </div>
         </div>

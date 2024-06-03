@@ -1,8 +1,18 @@
-<form action="" class="teacher-login-form w-100">
+<form action="" class="teacher-login-form w-100" wire:submit="forgotPass">
+    <div class="form-error">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
+
     <div class="login-input-box default-flex-column mb-20">
         <label for="registration">E-mail</label>
-        <input class="w-100" type="text" name="registration" placeholder="seu-email@gmail.com">
-    </div>   
+        <input class="w-100" type="text" name="registration" placeholder="seu-email@gmail.com" wire:model="email">
+    </div>
 
     <div class="login-button-area">
         <button class="w-100" type="submit">Enviar</button>

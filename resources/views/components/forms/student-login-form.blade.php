@@ -1,11 +1,21 @@
-<form action="" class="student-login-form w-100">
+<form action="" class="student-login-form w-100" wire:submit="studentLogin">
+    <div class="form-error">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
+
     <div class="login-input-box default-flex-column">
         <label for="registration">ID Matrícula</label>
-        <input class="w-100" type="text" name="registration" placeholder="Ex: 128.567.64-89">
+        <input class="w-100" type="text" name="registration" placeholder="Ex: 128.567.89" wire:model="inscription">
     </div>
-        
+
     <div class="remember-input-area default-flex-start">
-        <input class="" type="checkbox" name="remember">
+        <input class="" type="checkbox" name="remember" wire:model="remember">
         <label for="remember">Lembrar ID</label>
     </div>
 

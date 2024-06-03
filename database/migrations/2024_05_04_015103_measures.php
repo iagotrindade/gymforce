@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('measures', function (Blueprint $table) {
+            $table->id();
+            $table->double('imc');
+            $table->string('height');
+            $table->string('weight');
+            $table->string('waist');
+            $table->string('hip');
+            $table->string('arms');
+            $table->string('legs');
+            $table->string('thighs');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('measures');
+    }
+};

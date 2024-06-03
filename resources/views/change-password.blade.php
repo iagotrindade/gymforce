@@ -9,6 +9,7 @@
             <p>Informe abaixo sua nova senha</p>
         </div>
 
-        <x-forms.change-password-form></x-forms.change-password-form>
+
+        <x-forms.change-password-form token="{{$token}}"></x-forms.change-password-form>
     </section>
 </x-layouts.auth-layout>

@@ -6,10 +6,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -18,8 +24,17 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role',
+        'inscription',
+        'image_id',
+        'age',
         'email',
+        'whatsapp',
+        'phone',
+        'plan',
+        'plan_date',
         'password',
+        'status',
     ];
 
     /**
@@ -43,5 +58,35 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function image(): BelongsTo
+    {
+        return $this->belongsTo(Image::class);
+    }
+
+    public function accessToken(): HasMany
+    {
+        return $this->hasMany(AccessToken::class);
+    }
+
+    public function statistics(): HasOne
+    {
+        return $this->hasOne(Measure::class);
+    }
+
+    public function weightHistoric(): HasMany
+    {
+        return $this->hasMany(weightHistoric::class);
+    }
+
+    public function workouts(): HasMany
+    {
+        return $this->hasMany(Workout::class);
+    }
+
+    public function workoutProgress(): HasMany
+    {
+        return $this->hasMany(WorkoutProgress::class);
     }
 }

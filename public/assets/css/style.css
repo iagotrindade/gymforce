@@ -16,6 +16,10 @@
     --light-black-color: #3E3D3D;
 }
 
+.white-font-color {
+    color: #FFFFFF;
+}
+
 .w-100 {
     width: 100% !important;
 }
@@ -142,7 +146,6 @@
     align-items: center;
 }
 
-
 .default-flex-around {
     display: flex;
     justify-content: space-around;
@@ -169,7 +172,6 @@
     align-items: center;
 }
 
-
 .default-flex-column-end {
     display: flex;
     flex-direction: column;
@@ -191,6 +193,11 @@
     align-items: center;
 }
 
+.file-hidden-input {
+    position: absolute;
+    bottom: -1500px;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -207,6 +214,16 @@
     max-width: 430px;
     height: 100vh;
     margin: auto;
+}
+
+.form-error {
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    margin-left: 15px;
+}
+
+.form-error ul li {
+    margin-bottom: 8px;
 }
 
 .initial-loading-screen {
@@ -473,8 +490,13 @@
     font-size: 10px;
     line-height: 12px;
     text-align: center;
-    text-decoration-line: underline;
+    color: var(--light-black-color);
+}
+
+.re-send-verification-code-active {
     color: var(--emphasis-color);
+    text-decoration-line: underline;
+    cursor: pointer;
 }
 
 /*Studant APP CSS*/
@@ -495,8 +517,8 @@
     width: 100%;
     height: 80px;
     color: #fff;
-    
-    
+
+
 }
 
 .mobile-menu nav {
@@ -565,8 +587,9 @@
 }
 
 .workout-item {
+    background-position: center;
     background-size: cover;
-    width: 370px;
+    width: 380px;
     height: 170px;
     border-radius: 5px;
     padding: 15px;
@@ -619,7 +642,7 @@
 .workout-student-back-button i {
     color: #FFFFFF;
     font-size: 28px;
-    font-weight: 400;   
+    font-weight: 400;
 }
 
 .workout-student-back-button p {
@@ -628,6 +651,10 @@
     line-height: 15px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.edit-workout-info {
+    margin-top: 220px;
 }
 
 .workout-student-info {
@@ -918,7 +945,7 @@
 }
 
 .weight-history-line-area {
-    width: 95vw;
+    width: 100vw;
     overflow-x: scroll;
 }
 
@@ -950,16 +977,21 @@
 .primary-line {
     width: 120px;
     height: 2px;
-    background-color: var(--emphasis-color);
+    background-color: #1E1E1E;
 }
 
 .line-point {
     width: 10px;
     height: 10px;
     border-radius: 10px;
-    background-color: var(--emphasis-color);
+    background-color: #1E1E1E;
     margin-top: -6px;
 }
+
+.primary-line-active {
+    background-color: var(--emphasis-color);
+}
+
 
 .history-line-date-info {
     font-weight: 500;
@@ -1025,7 +1057,6 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
     background-color: var(--default-dark-color);
     padding: 40px 25px;
     overflow-y: scroll;
@@ -1034,8 +1065,6 @@
 .close-edit-profile-modal-area {
     color: #FFFFFF;
     font-size: 30px;
-    cursor: pointer;
-
 }
 
 .edit-profile-image img {
@@ -1074,6 +1103,21 @@
     color: #FFFFFF;
     padding-left: 10px;
     outline: 0;
+}
+
+.edit-profile-input-box select {
+    appearance: none;
+    height: 45px;
+    border: 1px solid #525050;
+    border-radius: 4px;
+    background-color: var(--default-dark-color);
+    color: #FFFFFF;
+    padding-left: 10px;
+    outline: 0;
+}
+
+.password-to-email-warning {
+    font-size: 17.5px;
 }
 
 .submit-edit-profile-button {
@@ -1117,7 +1161,7 @@
     color: #FFFFFF;
 }
 
-.students-top-area select {
+.students-top-area select  {
     background-color: transparent;
     border: none;
     appearance: none;
@@ -1165,8 +1209,8 @@
 }
 
 .add-new-student-button-area {
-    position: relative;
-    top: 250px;
+    position: fixed;
+    bottom: 100px;
     left: 85%;
     width: 50px;
     height: 50px;
@@ -1217,11 +1261,11 @@
 }
 
 .edit-workout-area {
+    height: 100%;
+    overflow-y: scroll;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     background-color: var(--default-dark-color);
     padding: 40px 25px;
 }
@@ -1266,9 +1310,22 @@
     border: none;
 }
 
+.add-new-workout-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--default-dark-color);
+    height: 100vh;
+    width: 100vw;
+    padding: 24px 14px;
+}
+
 
 
 /*ADM EXERCISE CSS*/
+.exercise-list-area {
+    position: relative;
+}
 
 .exercise-list-item {
     background-color: #1E1E1E;
@@ -1277,7 +1334,14 @@
     cursor: pointer;
 }
 
+.exercise-list-item img {
+    border-radius: 5px 0 0 5px;
+    width: 100px;
+    height: 100px;
+}
+
 .exercise-list-item-info {
+    padding-left: 20px;
     align-items: flex-start;
     font-weight: 400;
     font-size: 15px;
@@ -1293,9 +1357,9 @@
 }
 
 .add-new-exercise-button-area {
-    position: relative;
-    top: 350px;
-    left: 45%;
+    position: absolute;
+    top: 700px;
+    left: 85%;
     width: 50px;
     height: 50px;
     background-color: var(--emphasis-color);
@@ -1310,6 +1374,7 @@
 }
 
 .add-new-exercise-area {
+    overflow-y: scroll;
     position: fixed;
     top: 0;
     left: 0px;
@@ -1318,7 +1383,7 @@
     background-color: var(--default-dark-color);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
     justify-content: flex-start;
-    padding: 0 15px;
+    padding: 0 15px 80px 15px;
 }
 
 .search-workout-exercise-area input {
@@ -1383,6 +1448,13 @@
     cursor: pointer;
 }
 
+.add-exercise-form-img img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
 .add-exercise-form-img i {
     color: var(--emphasis-color);
     font-size: 38px;
@@ -1391,4 +1463,15 @@
 .add-exercise-form-img p {
     color: #FFFFFF;
     font-size: 12px;
+}
+
+.add-new-teacher-form-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--default-dark-color);
+    padding: 40px 25px;
+    overflow-y: scroll;
 }

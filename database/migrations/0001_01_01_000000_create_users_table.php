@@ -13,10 +13,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('role')->nullable();
+            $table->string('cref')->unique()->nullable();
+            $table->string('inscription')->unique()->nullable();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('age')->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->string('whatsapp')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('status');
+            $table->string('plan')->nullable();
+            $table->date('plan_date')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -35,6 +44,14 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        Schema::create('access_tokens', function (Blueprint $table) {
+            $table->id();
+            $table->string('token')->unique();
+            $table->timestamp('expiration');
+            $table->tinyInteger('used')->default(0);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -45,5 +62,6 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('access_tokens');
     }
 };

@@ -72,5 +72,43 @@
         </div>
 
         <x-forms.forgot-password-form></x-forms.forgot-password-form>
+
+        @script
+            <script>
+                $wire.on('sendLoginToken', () => {
+                    var countdownElement = document.getElementById('countdown');
+                    var countdownLink = document.getElementById('countdown-link');
+
+                    var endTime = new Date();
+                    endTime.setMinutes(endTime.getMinutes() + 1);
+
+                    function updateCountdown() {
+                        var now = new Date();
+                        var distance = endTime - now;
+
+                        if (distance <= 0) {
+                            clearInterval(intervalId);
+                            countdownElement.innerHTML = "";
+
+                            countdownLink.classList.add('re-send-verification-code-active');
+                            countdownLink.setAttribute('wire:click', 'sendLoginToken');
+
+                            return;
+                        }
+
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        minutes = minutes < 10 ? "0" + minutes : minutes;
+                        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                        countdownElement.innerHTML = minutes + ":" + seconds;
+                    };
+
+                    updateCountdown();
+                    var intervalId = setInterval(updateCountdown, 1000);
+                });
+            </script>
+        @endscript
     </section>
 </div>

@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        @livewireStyles
         <title>GYMFORCE - {{$page}}</title>
     </head>
     <body>
@@ -23,7 +24,6 @@
                 }
             }
 
-            // Adiciona um listener para a tecla backspace
             document.addEventListener("keydown", function(event) {
                 var currentInput = event.target;
                 if (event.key === "Backspace" && currentInput.value.length === 0) {
@@ -36,5 +36,6 @@
         </script>
 
         <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        @livewireScripts
     </body>
 </html>

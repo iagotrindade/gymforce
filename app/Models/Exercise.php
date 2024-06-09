@@ -22,4 +22,8 @@ class Exercise extends Model
     {
         return $this->belongsTo(ExerciseMedias::class, 'exercise_medias_id', 'id');
     }
+
+    public function workoutData(): hasOne {
+        return $this->hasOne(WorkoutExercise::class, 'exercise_id', 'id');
+    }
 }

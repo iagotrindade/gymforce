@@ -12,6 +12,12 @@ class WorkoutProgress extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'week',
+        'user_id',
+        'workout_id',
+    ];
+
     public function workout(): BelongsTo
     {
         return $this->belongsTo(Workout::class);

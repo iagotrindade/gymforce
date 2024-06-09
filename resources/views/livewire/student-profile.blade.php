@@ -3,18 +3,18 @@
         <div class="student-profile-head mb-30 default-flex-between">
             <div class="default-flex">
                 <div class="student-profile-image-area">
-                    <img src="{{url('assets/images/avatars/avatar.png')}}" alt="Foto de Perfil">
+                    <img src="{{url("storage/{$user->image->url}")}}" alt="Imagem do Aluno">
                 </div>
 
                 <div class="student-profile-personal-info-area default-flex-column">
-                    <p class="student-profile-plan-info mb-10">Plano R$ 99,90/mês</p>
+                    <p class="student-profile-plan-info mb-10">Plano R$ {{$user->plan}}</p>
 
                     <div class="default-flex">
-                        <h3 class="student-profile-name mb-10">Anitta</h3>
-                        <p class="student-profile-age">25 anos</p>
+                        <h3 class="student-profile-name mb-10">{{$user->name}}</h3>
+                        <p class="student-profile-age">{{$user->age}} anos</p>
                     </div>
 
-                    <p class="student-profile-id"><strong>ID</strong> 128.457.89-18</p>
+                    <p class="student-profile-id"><strong>ID</strong> {{$user->inscription}}</p>
                 </div>
             </div>
 
@@ -30,17 +30,17 @@
                 <div class="default-flex-between mb-10">
                     <div class="statistic-box height-box default-flex-column">
                         <p>ALTURA</p>
-                        <p>1,54 mm</p>
+                        <p>{{$user->statistics->height}} mm</p>
                     </div>
 
                     <div class="statistic-box weight-box default-flex-column">
                         <p>PESO</p>
-                        <p>55,4 kg</p>
+                        <p>{{$user->statistics->weight}} kg</p>
                     </div>
 
-                    <div class="statistic-box imc-box default-flex-column">
+                    <div class="statistic-box imc-box default-flex-column" style="border-bottom: 3px solid {{$this->calcImc($user->statistics->imc)}};">
                         <p>IMC</p>
-                        <p>21.1</p>
+                        <p>{{$user->statistics->imc}}</p>
                     </div>
                 </div>
 
@@ -60,11 +60,11 @@
 
                         <tbody>
                             <tr>
-                                <td>23,5</td>
-                                <td>23,5</td>
-                                <td>23,5D/23,4E</td>
-                                <td>23,5D/23,4E</td>
-                                <td>23,5D/23,4E</td>
+                                <td>{{$user->statistics->waist}}</td>
+                                <td>{{$user->statistics->hip}}</td>
+                                <td>{{$user->statistics->arms}}</td>
+                                <td>{{$user->statistics->legs}}</td>
+                                <td>{{$user->statistics->thighs}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -79,55 +79,26 @@
 
         <div class="weight-imc-tab" style="display: {{ $activeTab === 'weight' ? 'block' : 'none' }}">
             <div class="weight-progess-area default-flex mb-20">
-                <h3>67Kg</h3>
-                <p>14/04 á 14/05</p>
-                <h3>63Kg</h3>
+                <h3>{{$user->weightHistoric->slice(-2, 1)->first()->weight}}Kg</h3>
+
+                <p>{{\Carbon\Carbon::parse($user->weightHistoric->slice(-2, 1)->first()->created_at)->format('d/m')}} á {{\Carbon\Carbon::parse($user->weightHistoric->last()->created_at)->format('d/m')}}</p>
+
+                <h3>{{$user->weightHistoric->last()->weight}}Kg</h3>
             </div>
 
             <div class="weight-history-line-area default-flex mb-30">
-                <div class="weight-history-line-area-item default-flex-column">
-                    <p class="history-line-weight-info mb-10">67Kg</p>
+                @foreach ($user->weightHistoric as $historicItem)
+                    <div class="weight-history-line-area-item default-flex-column">
+                        <p class="history-line-weight-info mb-10">{{$historicItem->weight}}Kg</p>
 
-                    <div class="line-area default-flex-column mb-10">
-                        <div class="primary-line"></div>
-                        <div class="line-point"></div>
+                        <div class="line-area default-flex-column mb-10">
+                            <div class="primary-line primary-line-active"></div>
+                            <div class="line-point primary-line-active"></div>
+                        </div>
+
+                        <p class="history-line-date-info">{{\Carbon\Carbon::parse($historicItem->created_at)->format('d/m')}}</p>
                     </div>
-
-                    <p class="history-line-date-info">14/04</p>
-                </div>
-
-                <div class="weight-history-line-area-item default-flex-column">
-                    <p class="history-line-weight-info mb-10">67Kg</p>
-
-                    <div class="line-area default-flex-column mb-10">
-                        <div class="primary-line"></div>
-                        <div class="line-point"></div>
-                    </div>
-
-                    <p class="history-line-date-info">14/04</p>
-                </div>
-
-                <div class="weight-history-line-area-item default-flex-column">
-                    <p class="history-line-weight-info mb-10">67Kg</p>
-
-                    <div class="line-area default-flex-column mb-10">
-                        <div class="primary-line"></div>
-                        <div class="line-point"></div>
-                    </div>
-
-                    <p class="history-line-date-info">14/04</p>
-                </div>
-
-                <div class="weight-history-line-area-item default-flex-column">
-                    <p class="history-line-weight-info mb-10">67Kg</p>
-
-                    <div class="line-area default-flex-column mb-10">
-                        <div class="primary-line"></div>
-                        <div class="line-point"></div>
-                    </div>
-
-                    <p class="history-line-date-info">14/04</p>
-                </div>
+                @endforeach
             </div>
 
             <div class="student-imc-area">
@@ -196,177 +167,71 @@
         </div>
 
         <div class="progress-tab" style="display: {{ $activeTab === 'progress' ? 'block' : 'none' }}">
-            <h3 class="progress-tab-title mb-10">Abril</h3>
-            <p class="progress-tab-month mb-30">01/04 á 31/04</p>
+            <h3 class="progress-tab-title mb-10">{{ucfirst(\Carbon\Carbon::now()->locale('pt_BR')->monthName)}}</h3>
+            <p class="progress-tab-month mb-30">{{Carbon\Carbon::now()->startOfMonth()->format('d/m') . ' á ' . Carbon\Carbon::now()->endOfMonth()->format('d/m')}}</p>
 
             <div class="training timeline-area default-flex-column">
-                <div class="training-timeline-item mb-20">
-                    <p class="training-timeline-item-title mb-10">Treino A</p>
+                @foreach ($user->workouts as $workout)
+                    <div class="training-timeline-item mb-20">
+                        <p class="training-timeline-item-title mb-10">{{$workout->name}}</p>
 
-                    <div class="default-flex">
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
+                        <div class="default-flex">
+                            <div class="training-history-line-area-item default-flex-column">
+                                <div class="line-area default-flex-column mb-10">
+                                    <div class="primary-line @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '1') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                    <div class="line-point @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '1') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                </div>
+
+                                <p class="history-line-date-info">Semana 1</p>
                             </div>
 
-                            <p class="history-line-date-info">Semana 1</p>
-                        </div>
+                            <div class="training-history-line-area-item default-flex-column">
+                                <div class="line-area default-flex-column mb-10">
+                                    <div class="primary-line @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '2') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                    <div class="line-point @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '2') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                </div>
 
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
+                                <p class="history-line-date-info">Semana 2</p>
                             </div>
 
-                            <p class="history-line-date-info">Semana 2</p>
-                        </div>
+                            <div class="training-history-line-area-item default-flex-column">
+                                <div class="line-area default-flex-column mb-10">
 
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
+                                    <div class="primary-line @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '3') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                    <div class="line-point @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '3') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+
+                                </div>
+
+                                <p class="history-line-date-info">Semana 3</p>
                             </div>
 
-                            <p class="history-line-date-info">Semana 3</p>
-                        </div>
+                            <div class="training-history-line-area-item default-flex-column">
+                                <div class="line-area default-flex-column mb-10">
+                                    <div class="primary-line @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '4') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                    <div class="line-point @foreach ($userEditedWorkoutProgress as $progressItem)
+                                        @if ($progressItem->workout_id == $workout->id && $progressItem->week == '4') primary-line-active primary-line-active @endif
+                                    @endforeach"></div>
+                                </div>
 
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
+                                <p class="history-line-date-info">Semana 4</p>
                             </div>
-
-                            <p class="history-line-date-info">Semana 4</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="training-timeline-item mb-20">
-                    <p class="training-timeline-item-title mb-10">Treino B</p>
-
-                    <div class="default-flex">
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 1</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 2</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 3</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 4</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="training-timeline-item mb-20">
-                    <p class="training-timeline-item-title mb-10">Treino C</p>
-
-                    <div class="default-flex">
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 1</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 2</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 3</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 4</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="training-timeline-item mb-20">
-                    <p class="training-timeline-item-title mb-10">Treino D</p>
-
-                    <div class="default-flex">
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 1</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 2</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 3</p>
-                        </div>
-
-                        <div class="training-history-line-area-item default-flex-column">
-                            <div class="line-area default-flex-column mb-10">
-                                <div class="primary-line"></div>
-                                <div class="line-point"></div>
-                            </div>
-
-                            <p class="history-line-date-info">Semana 4</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -376,18 +241,41 @@
                     <i class='bx bx-x'  wire:click="openEditProfileModal()"></i>
                 </div>
 
-
                 <div class="edit-profile-image default-flex-column mb-30">
-                    <img class="mb-10" src="{{url('assets/images/avatars/avatar.png')}}" alt="Imagem do Usuário">
+                    <img class="mb-10" src="{{url("storage/{$user->image->url}")}}" alt="Imagem do Aluno" id="previewImage">
 
-                    <p>Carregar Foto</p>
+                    <p onclick="updateImage()">Carregar Foto</p>
                 </div>
 
                 <div class="edit-profile-form-area">
-                    <x-forms.edit-profile-form>
-                        <x-slot:adminFoneEdit></x-slot:adminFoneEdit>
+                    <x-forms.edit-profile-form :user="$user">
+                        <x-slot:adminFoneEdit>
+                            <div class="default-flex-between mb-10">
+                                <div class="edit-profile-input-box default-flex-column w-45">
+                                <label for="whatsapp">Whatsapp</label>
+                                <input class="w-100" type="text" name="whatsapp" value="{{$user->whatsapp}}">
+                            </div>
 
-                        <x-slot:adminEditPlan></x-slot:adminEditPlan>
+                            <div class="edit-profile-input-box default-flex-column w-50">
+                                <label for="phone">Número</label>
+                                <input class="w-100" type="text" name="phone" value="{{$user->phone}}">
+                                </div>
+                            </div>
+                        </x-slot:adminFoneEdit>
+
+                        <x-slot:adminEditPlan>
+                            <div class="default-flex-between mb-20">
+                                <div class="edit-profile-input-box default-flex-column w-70">
+                                    <label for="plan">Plano</label>
+                                    <input class="w-100" type="text" name="plan" value="{{$user->plan}}">
+                                </div>
+
+                                <div class="edit-profile-input-box default-flex-column w-25">
+                                    <label for="plan_date">Data</label>
+                                    <input class="w-100" type="date" name="plan_date" value="{{$user->plan_date}}">
+                                </div>
+                            </div>
+                        </x-slot:adminEditPlan>
                     </x-forms.edit-profile-form>
                 </div>
             </div>

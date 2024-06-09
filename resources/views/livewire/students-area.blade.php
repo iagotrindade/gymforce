@@ -171,7 +171,6 @@
                                     <p class="history-line-date-info">{{\Carbon\Carbon::parse($historicItem->created_at)->format('d/m')}}</p>
                                 </div>
                             @endforeach
-
                         </div>
 
                         <div class="student-imc-area">
@@ -344,13 +343,13 @@
                                         <x-slot:adminEditPlan>
                                             <div class="default-flex-between mb-20">
                                                 <div class="edit-profile-input-box default-flex-column w-70">
-                                                <label for="plan">Plano</label>
-                                                <input class="w-100" type="text" name="plan" value="{{$userEdited->plan}}">
-                                            </div>
+                                                    <label for="plan">Plano</label>
+                                                    <input class="w-100" type="text" name="plan" value="{{$userEdited->plan}}">
+                                                </div>
 
-                                            <div class="edit-profile-input-box default-flex-column w-25">
-                                                <label for="plan_date">Data</label>
-                                                <input class="w-100" type="date" name="plan_date" value="{{$userEdited->plan_date}}">
+                                                <div class="edit-profile-input-box default-flex-column w-25">
+                                                    <label for="plan_date">Data</label>
+                                                    <input class="w-100" type="date" name="plan_date" value="{{$userEdited->plan_date}}">
                                                 </div>
                                             </div>
                                         </x-slot:adminEditPlan>

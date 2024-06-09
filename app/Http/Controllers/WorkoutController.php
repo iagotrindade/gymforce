@@ -13,6 +13,10 @@ class WorkoutController extends Controller
         return view('exercise');
     }
 
+    public function studentWorkout(Request $request) {
+        return view('student-workout');
+    }
+
     public function editWorkout(Request $request) {
         $workout = Workout::find($request->id);
         $oldImage = $workout->image;

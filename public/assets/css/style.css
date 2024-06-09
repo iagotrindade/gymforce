@@ -587,6 +587,7 @@
 }
 
 .workout-item {
+    cursor: pointer;
     background-position: center;
     background-size: cover;
     width: 380px;
@@ -621,6 +622,17 @@
 
 /*STUDENT WORKOUT CSS*/
 
+.selected-workout-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--default-dark-color);
+    padding: 40px 25px;
+    overflow-y: scroll;
+    padding-bottom: 90px;
+}
 .workout-student-header {
     position: fixed;
     top: 0;
@@ -673,7 +685,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
-    text-align: center;
+    text-align: left;
     color: #FFFFFF;
 }
 
@@ -683,7 +695,15 @@
     background-color: #3C3B3B;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
     border-radius: 55px;
+}
+
+.finish-workout-button-active {
+    width: 100px;
+    height: 25px;
     cursor: pointer;
+    background-color: var(--emphasis-color);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 55px;
 }
 
 .completion-percentage-bar {
@@ -709,6 +729,11 @@
     cursor: pointer;
 }
 
+.student-workout-item img {
+    width: 100px;
+    height: 100px;
+}
+
 .student-workout-item-texts {
     font-weight: 400;
     font-size: 15px;
@@ -717,7 +742,12 @@
 }
 
 .student-workout-item i {
+    cursor: pointer;
     font-size: 26px;
+}
+
+.exercise-done-icon {
+    color: #31DA42;
 }
 
 .studant-exercise-info {

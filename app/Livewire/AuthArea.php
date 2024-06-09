@@ -129,7 +129,7 @@ class AuthArea extends Component
 
         if(Hash::check($token, $this->user->accessToken->last()->token) && $this->user->accessToken->last()->used !== 1) {
             if($this->user->getRoleNames()[0] === 'student') {
-                $this->loginAction('inscription', $this->user->inscription, $this->studentRemember, 'home');
+                $this->loginAction('inscription', $this->user->inscription, $this->user->inscription, $this->studentRemember, 'home');
             } else {
                 $this->loginAction('email', $this->email, $this->password, $this->teacherRemember, 'adm');
             }
@@ -140,12 +140,10 @@ class AuthArea extends Component
         }
     }
 
-    public function loginAction($field, $value, $pasword="", $remember, $redirectRoute) {
+    public function loginAction($field, $value, $pasword, $remember, $redirectRoute) {
         $credentials = [$field => $value];
 
-        if ($field === 'email') {
-            $credentials['password'] = $pasword;
-        }
+        $credentials['password'] = $pasword;
 
         if (Auth::attempt($credentials, $remember)) {
             $this->user->accessToken->last()->update([

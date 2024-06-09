@@ -44,4 +44,9 @@ class AuthController extends Controller
                     ? redirect()->route('login')->withErrors(['email' => 'Senha alterada com sucesso'])
                     : back()->withErrors(['email' => [__($status)]]);
     }
+
+    public function logout() {
+        auth()->logout();
+        return redirect(route('login'));
+    }
 }

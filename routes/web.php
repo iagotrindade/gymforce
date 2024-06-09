@@ -10,14 +10,20 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ExerciseController;
 
 Route::middleware(['auth'])->group(function () {
+    Route::controller(AuthController::class)->group(function () {
+        Route::post('logout', 'logout')->name('logout.action');
+    });
+
     Route::controller(HomeController::class)->group(function () {
         Route::get('/', 'index')->name('home');
         Route::get('/adm', 'adm')->name('adm');
     });
 
     Route::controller(WorkoutController::class)->group(function () {
-        Route::get('/treino', 'index')->name('workout');
+        Route::get('/adm/treino', 'index')->name('workout');
         Route::post('/treino', 'editWorkout')->name('workout.edit');
+
+        Route::get('/aluno/treino', 'studentWorkout')->name('workout.student');
     });
 
     Route::controller(ExerciseController::class)->group(function () {
@@ -52,5 +58,4 @@ Route::middleware(['guest'])->group(function () {
 
         Route::post('/alterar/senha', 'passwordUpdate')->name('password.update');
     });
-
 });

@@ -34,7 +34,7 @@
     </div>
 </form>
 
-<div class="questions-link-area default-flex" style="margin-top: 200px">
+<div class="questions-link-area default-flex" style="margin-top: 160px">
     <p>Dúvidas ou Problemas?</p>
     <a href="">Falar no WhastApp</a>
 </div>

@@ -23,11 +23,15 @@
 
             <div class="edit-profile-input-box default-flex-column w-25">
                 <label for="status">Situação</label>
-                <select class="w-100" name="status" id="">
-                    <option selected disabled>Selecione</option>
-                    <option value="Ativo" {{ $user->status == 'Ativo' ? 'selected' : '' }}>Ativo</option>
-                    <option value="Inativo" {{ $user->status == 'Inativo' ? 'selected' : '' }}>Inativo</option>
-                </select>
+                @if(Auth::user()->hasRole('student'))
+                    <input class="w-100" type="email" name="status" value="{{$user->status}}" readonly>
+                @else
+                    <select class="w-100" name="status" id="" >
+                        <option selected disabled>Selecione</option>
+                        <option value="Ativo" {{ $user->status == 'Ativo' ? 'selected' : '' }}>Ativo</option>
+                        <option value="Inativo" {{ $user->status == 'Inativo' ? 'selected' : '' }}>Inativo</option>
+                    </select>
+                @endif
             </div>
         </div>
 

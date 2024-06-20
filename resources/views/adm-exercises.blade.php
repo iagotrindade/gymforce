@@ -11,6 +11,8 @@
         </div>
     </section>
 
+    <livewire:adm-search />
+
     <main>
         <livewire:exercises-area />
     </main>

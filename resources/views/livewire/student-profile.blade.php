@@ -23,6 +23,16 @@
             </div>
         </div>
 
+        <div class="form-error">
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+
         <div class="student-profile-statistics mb-30">
             <h3 class="mb-20">Estatísticas</h3>
 
@@ -267,12 +277,12 @@
                             <div class="default-flex-between mb-20">
                                 <div class="edit-profile-input-box default-flex-column w-70">
                                     <label for="plan">Plano</label>
-                                    <input class="w-100" type="text" name="plan" value="{{$user->plan}}">
+                                    <input class="w-100" type="text" name="plan" value="{{$user->plan}}" @if(Auth::user()->hasRole('student')) readonly @endif>
                                 </div>
 
                                 <div class="edit-profile-input-box default-flex-column w-25">
                                     <label for="plan_date">Data</label>
-                                    <input class="w-100" type="date" name="plan_date" value="{{$user->plan_date}}">
+                                    <input class="w-100" type="date" name="plan_date" value="{{$user->plan_date}}" @if(Auth::user()->hasRole('student')) readonly @endif>
                                 </div>
                             </div>
                         </x-slot:adminEditPlan>

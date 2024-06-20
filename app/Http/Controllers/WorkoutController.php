@@ -63,4 +63,25 @@ class WorkoutController extends Controller
 
         return redirect(route('adm'))->withErrors('O treino '.$workout->name.' foi atualizado');
     }
+
+    public function deleteWorkout(Request $request) {
+        $workout = Workout::find($request->id);
+
+        foreach($workout->exercises as $exercise) {
+            $exercise->delete();
+        }
+
+        foreach($workout->workoutProgress as $progress) {
+            $progress->delete();
+        }
+
+        $workout->delete();
+
+        if($workout->image->id!= 1) {
+            Storage::delete([$workout->image->url]);
+            $workout->image->delete();
+        }
+
+        return redirect(route('adm'))->withErrors('O treino '.$workout->name.' foi removido');
+    }
 }

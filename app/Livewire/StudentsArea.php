@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Rule;
@@ -236,6 +237,18 @@ class StudentsArea extends Component
                 return "#023E8A";
                 break;
         }
+    }
 
+    #[On('searchItems')]
+    public function searchItems($searchTerm)
+    {
+        if(!empty($searchTerm)) {
+            $this->users = User::where('name', 'like', ''.$searchTerm.'%')
+                ->orWhere('email', 'like', ''.$searchTerm.'%')
+            ->get();
+        } else {
+
+            $this->users = User::all();
+        }
     }
 }

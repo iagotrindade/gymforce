@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             ImageSeeder::class,
             AccessControlSeeder::class,
             AdminUserSeeder::class,
-            StudentTestSeeder::class,
             ExerciseMideaSeeder::class,
             ExerciseSeeder::class,
         ]);

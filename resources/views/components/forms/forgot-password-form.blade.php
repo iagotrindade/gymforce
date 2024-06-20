@@ -11,7 +11,7 @@
 
     <div class="login-input-box default-flex-column mb-20">
         <label for="registration">E-mail</label>
-        <input class="w-100" type="text" name="registration" placeholder="seu-email@gmail.com" wire:model="email">
+        <input class="w-100" type="text" name="registration" placeholder="Ex: seu-email@gmail.com" wire:model="email">
     </div>
 
     <div class="login-button-area">

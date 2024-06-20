@@ -61,7 +61,7 @@ class AuthArea extends Component
     public function changeLoginTab($type)
     {
         foreach ($this->tabDisplay as $key => $value) {
-            $this->tabDisplay[$key] = $key == $type ? 'flex' : 'none';
+            $this->tabDisplay[$key] = $key == $type ? 'block' : 'none';
         }
         $this->chosenTab = $type == 'teacher' ? 'professor' : 'aluno';
     }

@@ -91,8 +91,23 @@
                         document.getElementById('no-preview-image-exercise').style.display = 'none';
                     };
                     exerciseReader.readAsDataURL(exerciseInput.files[0]);
+                });
+            }
 
-                    console.log(exerciseInput);
+            function admEditWorkoutImage() {
+                document.getElementById('admWorkoutFileInput').click();
+
+                document.getElementById('admWorkoutFileInput').addEventListener('change', function(event) {
+                    var exerciseInput = event.target;
+                    var exerciseReader = new FileReader();
+
+                    exerciseReader.onload = function() {
+                        var dataURL = exerciseReader.result;
+                        var previewExerciseImage = document.getElementById('admPrevWorkoutImage');
+
+                        previewExerciseImage.style.backgroundImage = 'url('+dataURL+')';
+                    };
+                    exerciseReader.readAsDataURL(exerciseInput.files[0]);
                 });
             }
 

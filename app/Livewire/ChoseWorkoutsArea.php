@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Workout;
 use App\Models\Exercise;
@@ -33,6 +34,8 @@ class ChoseWorkoutsArea extends Component
         $this->exercisesCount = $this->activeWorkout->exercises()->count();
 
         $this->workoutDisplay = ($this->workoutDisplay === 'none') ? 'flex' : 'none';
+
+        $this->dispatch('openWorkout');
     }
 
     public function toggleTab($tab)

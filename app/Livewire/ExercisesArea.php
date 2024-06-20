@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\On;
 use App\Models\Exercise;
 use App\Models\ExerciseMedias;
 use Illuminate\Support\Facades\Storage;
@@ -60,5 +61,16 @@ class ExercisesArea extends Component
         }
 
         return redirect(route('workout.adm'));
+    }
+
+    #[On('searchItems')]
+    public function searchItems($searchTerm)
+    {
+        if(!empty($searchTerm)) {
+            $this->exercises = Exercise::where('name', 'like', ''.$searchTerm.'%')->get();
+        } else {
+
+            $this->exercises = Exercise::all();
+        }
     }
 }

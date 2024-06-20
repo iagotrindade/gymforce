@@ -28,4 +28,9 @@ class Workout extends Model
     {
         return $this->hasMany(WorkoutExercise::class);
     }
+
+    public function workoutProgress(): HasMany
+    {
+        return $this->hasMany(WorkoutProgress::class);
+    }
 }

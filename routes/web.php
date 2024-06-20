@@ -22,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(WorkoutController::class)->group(function () {
         Route::get('/adm/treino', 'index')->name('workout');
         Route::post('/treino', 'editWorkout')->name('workout.edit');
+        Route::get('/treino/delete/{id}', 'deleteWorkout')->name('workout.delete');
 
         Route::get('/aluno/treino', 'studentWorkout')->name('workout.student');
     });

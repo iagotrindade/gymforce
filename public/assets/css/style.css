@@ -265,7 +265,7 @@
 }
 
 .change-login-tab-button {
-    width: 191px;
+    width: 171px;
     height: 38px;
     color: var(--emphasis-color);
     background-color: transparent;
@@ -292,6 +292,7 @@
     height: 100vh;
     padding: 30px;
     background-color: var(--default-dark-color);
+    overflow-x: scroll;
 }
 
 .login-back-button {
@@ -301,7 +302,7 @@
     line-height: 15px;
     color: #FFFFFF;
     cursor: pointer;
-    margin-bottom: 88px;
+    margin-bottom: 60px;
 }
 
 .login-back-button a {
@@ -510,6 +511,11 @@
     padding-bottom: 100px;
 }
 
+.adm-search-area {
+    background-color: var(--default-dark-color);
+    overflow-y: scroll;
+}
+
 .mobile-menu {
     position: fixed;
     left: 0;
@@ -517,8 +523,6 @@
     width: 100%;
     height: 80px;
     color: #fff;
-
-
 }
 
 .mobile-menu nav {
@@ -633,6 +637,7 @@
     overflow-y: scroll;
     padding-bottom: 90px;
 }
+
 .workout-student-header {
     position: fixed;
     top: 0;
@@ -1338,6 +1343,13 @@
     line-height: 20px;
     color: #FFFFFF;
     border: none;
+}
+
+.delete-workout-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--emphasis-color);
 }
 
 .add-new-workout-area {

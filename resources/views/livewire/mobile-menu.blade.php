@@ -22,14 +22,14 @@
 
             @hasanyrole('Super-Admin|admin|teacher')
                 <li>
-                    <i class='bx bx-search-alt-2 @if($activeMenu == 'search') active-menu @endif' wire:click="$dispatch('openSearch')"></i>
+                    <i class='bx bx-search-alt-2 @if($activeMenu == 'search') active-menu @endif' wire:click="$dispatch('openSearch')" wire:click="openSearch"></i>
                 </li>
             @endhasrole
 
             <li>
                 @hasrole('student')
-                    <a href="{{route('workout')}}">
-                        <i class='bx bx-dumbbell @if($activeMenu == 'workouts') active-menu @endif'></i>
+                    <a href="{{route('home')}}">
+                        <i class='bx bx-dumbbell @if($showingTraining == true) active-menu @endif'></i>
                     </a>
                 @else
                     <a href="{{route('workout.adm')}}">

@@ -17,7 +17,7 @@
     </section>
 
     <section class="teacher-login-tab-area default-flex-column" style="display: {{ $tabDisplay['teacher'] }}">
-        <div class="login-back-button default-flex-start w-100" wire:click="backToChoiceLogin()" style="margin-bottom: 200px">
+        <div class="login-back-button default-flex-start w-100" wire:click="backToChoiceLogin()" style="margin-bottom: 100px">
             <i class='bx bx-chevron-left'></i>
             Voltar
         </div>
@@ -49,7 +49,7 @@
     </section>
 
     <section class="confirm-login-tab-area default-flex-column"  style="display: {{ $tabDisplay['confirmLogin'] }}">
-        <div class="login-back-button default-flex-start w-100" wire:click="backToChoiceLogin()" style="margin-bottom: 300px">
+        <div class="login-back-button default-flex-start w-100" wire:click="backToChoiceLogin()" style="margin-bottom: 100px">
             <i class='bx bx-chevron-left'></i>
             Voltar
         </div>
@@ -62,13 +62,13 @@
     </section>
 
     <section class="forgot-password-tab-area default-flex-column" style="display: {{ $tabDisplay['forgotPass'] }}">
-        <div class="login-back-button default-flex-start w-100" wire:click="backToChoiceLogin()" style="margin-bottom: 300px">
+        <div class="login-back-button default-flex-start w-100" wire:click="backToChoiceLogin()" style="margin-bottom: 100px">
             <i class='bx bx-chevron-left'></i>
             Voltar
         </div>
 
         <div class="confirm-login-form-title mb-40">
-            <p>Digite abaixo seu e-mail cadastrado</p>
+            <p>Digite seu e-mail</p>
         </div>
 
         <x-forms.forgot-password-form></x-forms.forgot-password-form>

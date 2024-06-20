@@ -428,7 +428,7 @@
 
             @if(!empty($workoutEdited))
                 <div class="edit-workout-area default-flex-column-start w-100" style="display: {{$editWorkoutModalDisplay}};">
-                    <div id="previewExerciseImage" class="workout-student-header  mb-20" style="background-image: url(storage/{{$workoutEdited->image->url}}); height:240px;">
+                    <div id="admPrevWorkoutImage" class="workout-student-header  mb-20" style="background-image: url(storage/{{$workoutEdited->image->url}}); height:240px;">
                         <div class="workout-student-back-button mb-40" wire:click="openEditWorkoutModal">
                             <div class="default-flex-start">
                                 <i class='bx bxs-chevron-left'></i>
@@ -436,7 +436,7 @@
                             </div>
                         </div>
 
-                        <div onclick="editWorkoutImage()">
+                        <div onclick="admEditWorkoutImage()">
                             <div class="change-cover-image-button default-flex-column">
                                 <i class='bx bxs-image-add'></i>
                                 <p>Trocar capa</p>
@@ -447,7 +447,7 @@
                     <div class="edit-workout-info w-100">
                         <form id="workoutBaseData" method="POST" action="{{route('workout.edit')}}" class="w-100" enctype="multipart/form-data">
                             @csrf
-                            <input type="file" name="image" class="file-hidden-input" id="exerciseFileInput">
+                            <input type="file" name="image" class="file-hidden-input" id="admWorkoutFileInput">
                             <input type="hidden" name="id" value="{{$workoutEdited->id}}">
                             <input type="hidden" name="user_id" value="{{$userEdited->id}}">
                             <div class="default-flex-between mb-10">
@@ -483,7 +483,10 @@
                         <p>+ Adicionar Exercício</p>
                     </div>
 
-                    <div class="save-workout-button default-flex-end w-100">
+                    <div class="save-workout-button default-flex-between w-100">
+                        @hasanyrole('Super-Admin|admin|teacher')
+                            <a class="delete-workout-button" onclick="return confirm('Deseja remover o treino {{$workoutEdited->name}}?')" href="{{route('workout.delete', $workoutEdited->id)}}">Deletar treino</a>
+                        @endhasanyrole
                         <button form="workoutBaseData">Salvar</button>
                     </div>
                 </div>

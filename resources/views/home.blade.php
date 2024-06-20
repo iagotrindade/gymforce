@@ -16,5 +16,5 @@
     <livewire:chose-workouts-area />
 
     <livewire:timer-modal />
-    <livewire:mobile-menu activeMenu="home"/>
+    <livewire:mobile-menu activeMenu="home" />
 </x-layouts.student-layout>

@@ -1,4 +1,5 @@
 <x-layouts.teacher-layout page="HOME">
+
     <section class="home-teacher-header default-flex-column mb-40">
         <h3 class="mb-10">Olá, {{Auth::user()->name}}!</h3>
 
@@ -11,9 +12,12 @@
         </div>
     </section>
 
+    <livewire:adm-search />
+
     <main>
         <livewire:students-area />
     </main>
+
 
     <livewire:mobile-menu activeMenu="home"/>
 </x-layouts.teacher-layout>

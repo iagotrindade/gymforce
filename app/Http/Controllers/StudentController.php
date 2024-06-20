@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Notifications\newStudentNotification;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Image;
@@ -93,7 +94,15 @@ class StudentController extends Controller
             $oldImage->delete();
         }
 
-        return redirect(route('adm'))->withErrors('O usuário '.$user->name.' foi atualizado');
+        if (Auth::user()->hasRole('student')) {
+            $message = 'Seu perfil foi atualizado';
+            $route = 'profile';
+        } else {
+            $message = 'O usuário ' . $user->name . ' foi atualizado';
+            $route = 'adm';
+        }
+
+        return redirect(route($route))->withErrors($message);
     }
 
     public function validateStudentData($request, $imageId, $inscription = "") {
